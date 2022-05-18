@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n,a,b,i,j;
+    cout << "Enter the number of elements to be inserted"<<endl;
+    cin >>n;
+    int ar[100];
+    cout << "Entert the elements"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin >> ar[i];
+    }
+    cout << "Enter the position of the insertion"<<endl;
+    cin >>a;
+    //a-1 is the index to be inserted
+    cout << "Enter the element to be inserted"<<endl;
+    cin >> b;
+    //b is the element
+    for(j=n;j>=a;j--)
+    {
+        ar[j]=ar[j-1];
+    }
+    ar[a-1]=b;
+    for(i=0;i<=n;i++)
+    {
+        cout <<ar[i];
+    }
+    return 0;
+}
