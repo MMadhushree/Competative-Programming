@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int ar[20],bucket[1000];
+    int n,max,count,i,j;
+    cout << "Enter the number of elements to be inserted"<<endl;
+    cin >>n;
+    cout << "Entert the elements"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin >> ar[i];
+    }
+    max=ar[0];
+    for(j=1;j<n;j++)
+    {
+        if(ar[j]>max)
+            max=ar[j];
+    }
+    if(max<n)
+        max=n;
+    
+    for(i =0;i<max;i++)
+    {
+        bucket[i]=0;
+    }
+    for(i =0;i<n;i++)
+    {
+        bucket[ar[i]]++;
+        if(bucket[ar[i]]>1)
+            count++;
+    }
+    cout << "There are "<<count<<"duplicates"<<endl;
+    
+    return 0;
+}
