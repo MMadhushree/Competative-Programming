@@ -1,0 +1,62 @@
+A program to input elements in array from user and count duplicate elements in array. Program to find all duplicate elements in an unsorted array. 
+
+Example
+
+Input
+Input array elements: 1, 10, 20, 1, 25, 1, 10, 30, 25, 1
+
+Output
+Total number of duplicate elements = 5
+
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int code[10]={1,10,20,1,25,1,10,30,25,1};
+    int store[10];
+    int present=0;
+    int n=10;
+    int count=0;
+    for (int i = 0; i < n; i++)
+    {   
+        
+                                  /* EXTRA for (int k = 0; k < 10; k++)
+                                     {
+                                         if(store[k]==code[i])
+                                         present=present+1;
+
+                                     }*/
+       for (int j = i+1; j < n; j++)
+       {    if( present==0){
+
+          if(code[i]==code[j]){
+               count=count+1;
+               cout<< "Success"<<code[i]<<" "<<code[j]<<endl;
+               break;
+                                       /*for (int k = 0; k < 10; k++)
+                                       {
+                                           store[k]=code[i];
+                                           break;
+                                       }    extra*/
+               
+           }
+
+       }
+
+       }
+       
+    }
+    
+    cout<<" Total="<<count;
+    return 0;
+}
+
+NOTE:
+Approach: If the no were redundant more than once the code calculated that also..
+          So thought of storing the ele in another array and do the comparison if it was not present in the new array.   
+          But didn't work. output for the given i/p was 8.
+          
+          View2- The problem was I compared the selected ele with all the other ele in array so there was redundency,this was solved by adding a simple break statement
+                  which counts only one duplicate element ahead 
