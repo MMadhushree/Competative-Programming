@@ -1,0 +1,33 @@
+/*******[c++]:Write a C function to return minimum and maximum in an array. Your program should make the minimum number of comparisons. ****/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n,a[10],min,j,temp,sort[10],k;
+    cout<<"ENTER THE ARRAY SIZE:"<<endl;
+    cin>>n;
+    cout<<"enter the array elements:"<<endl;
+    for(int i=0;i<n-1;i++)
+    {
+        cin>>a[i];
+    }
+    cout<<"the elements are:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        min=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(a[j]<a[min])
+            {
+                min=j;
+                temp=a[i];
+                a[i]=a[min];
+                a[min]=temp;
+            }
+        }
+    }
+    cout<<"the maximum number is:"<<a[n-1]<<endl;
+    cout<<"the minimum number is:"<<a[1]<<endl;
+    return 0;
+}
