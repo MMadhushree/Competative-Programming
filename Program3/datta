@@ -11,14 +11,17 @@ int main() {
         cin >> ar[i];
     }
     max=ar[0];
+    /*finding the max value in the array*/
     for(j=1;j<n;j++)
     {
         if(ar[j]>max)
             max=ar[j];
     }
+    /*if max is less than n then there wont be enough index to insert into the bucket*/
     if(max<n)
         max=n;
-    
+    /*if fo example the input was 1 1 2 2 3
+    here max is 3 so the below code will only insert bucket till index 2 so to get around that the above condition is put*/
     for(i =0;i<max;i++)
     {
         bucket[i]=0;
@@ -33,3 +36,6 @@ int main() {
     
     return 0;
 }
+/*
+NOTE : went with bucket approach
+ assuming only no of element to be inserted is known.*/
