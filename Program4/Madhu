@@ -27,14 +27,16 @@ int main(){
            sum=sum+arr[j];
            if(sum==s){
                cout<<i+1<<" "<<j+1<<endl;
-               break;
+               break;//Using only this gives pos of all the ele of sub array with the given sum.
+               int found=1;
+               
            }
        }
+       if(found==1){
+       break;
     }
   
     return 0;
 }
 
-OUTPUT:If you want to see multiple occcurrece of the sum value use break(line 30) else use exit which gives the test case o/p.
-       o/p for this case is 2 4 
-                            4 5
+
