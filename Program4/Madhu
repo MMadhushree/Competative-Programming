@@ -14,12 +14,36 @@ is 12.*/
 #include<iostream>
 using namespace std;
 
+//Aproach 2 with better efficiency
+void sort(int ar[],int n,int s){
+    int tot=ar[0], start=0;
+
+    for (int i = 1; i < n; i++)
+    {
+        while(tot>s && start<i-1){
+            tot=tot-ar[start];
+            start++;
+
+        }
+        if(tot==s){
+            cout<<"Found in pos"<<start+1 <<" to"<<i;
+            break;
+        }
+        else{
+            tot=tot+ar[i];
+        }
+    }
+    
+}
 int main(){
     int arr[]={1,2,3,7,5};
     int n=5;
     int s;
     cout<<"Enter the sum";
     cin>>s;
+    
+    sort(arr,n,s);
+   
     for (int i = 0; i < n; i++)
     {
        int sum=0;
