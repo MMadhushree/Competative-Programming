@@ -1,38 +1,31 @@
 package college;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class ArrayInsert {
-
+public class ArrayMinMax {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the number of elements to be enetered: ");
-		int n=scan.nextInt();
-		int[] a=new int[n];
-		int ele;
-		System.out.println("Enter the numbers: ");
-		for(int i=0;i<n;i++) {
-			ele=scan.nextInt();
-			a[i]=ele;
+		ArrayList<Integer> a = new ArrayList<Integer>();
+		System.out.println("Enter the number of elements you are Entering: ");
+		Scanner scaner = new Scanner(System.in);
+		int num = scaner.nextInt();
+		int ele=0;
+		int max=0;
+		System.out.println("Enter the array elements:");
+		for(int i=0;i<num;i++) {
+			ele=scaner.nextInt();
+			a.add(ele);
 		}
-		System.out.println("Enter the number to be inserted");
-		int i=scan.nextInt();
-		System.out.println("Enter the position to be inserted");
-		int j=scan.nextInt();
-		j=j-1;
-		for(int k=0;k<n;k++) {
-			if(k==j) {
-				for(int l=k;l<n;l++) {
-					a[k+1]=a[k];
-				}
-				a[j]=i;
+		int min=a.get(0);
+		for(int i:a) {
+			if(i>max){
+				max=i;
+			}else if(i<min){
+				min=i;
 			}
 		}
-		for(int m:a) {
-			System.out.print(m+" ");
-		}
+		System.out.println("The Maximum number in the Number list is: "+max);
+		System.out.println("The Minimum number in the Number list is: "+min);
 	}
-
 }
