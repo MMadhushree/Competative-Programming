@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int N,S,i,j,k,sum,flag;
+    cout<<"Enter the no of elements"<<endl;
+    cin>>N;
+    int A[N];
+    cout<<"Enter the sum"<<endl;
+    cin>>S;
+    cout<<"Enter the elements"<<endl;
+    for(k=0;k<N;k++)
+    {
+        cin>>A[k];
+    }
+    for(i=0;i<N;i++)
+    {
+        sum=0;
+        for(j=i;j<N;j++)
+        {
+            sum=sum+A[j];
+            if(S==sum)
+            {
+                cout<<i+1<<" "<<j+1;
+                flag=1;
+                break;
+            }
+        }
+        if(flag==1)
+            break;
+    }
+    return 0;
+}
