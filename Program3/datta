@@ -29,8 +29,11 @@ int main() {
     for(i =0;i<n;i++)
     {
         bucket[ar[i]]++;
-        if(bucket[ar[i]]>1)
+        While(bucket[ar[i]]>1)
+        {
             count++;
+            bucket[ar[i]]--;
+        }
     }
     cout << "There are "<<count<<"duplicates"<<endl;
     
