@@ -19,6 +19,7 @@ int main()
         a[i]=a[i-1];
     }
     a[i]=num;
+    n++;
     cout<<"The new array after insertion is:"<<endl;
     for(i=0; i<n; i++)
         cout<<a[i]<<"  ";
