@@ -1,0 +1,28 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n,i,a[10],ne,m;
+    cout<<"Enter the size : ";
+    cin>>n;
+    cout<<"Enter the elements : ";
+    for(i=0;i<n;i++)
+        cin>>a[i];
+    cout<<"input the value to be inserted : ";
+    cin>>m;
+    cout<<"input the index of next value : ";
+    cin>>ne;
+    cout<<"the current list of the array :\n"<<endl;
+    for(i=0;i<n;i++)
+        cout<<a[i]<<"\t";           
+    for(i=n;i>ne;i--)
+    {
+        a[i] = a[i-1];          
+    }
+    a[i] = m;
+    n++;
+    cout<<"the new list is :\n"<<endl;
+    for(i=0;i<n;i++)
+        cout<<a[i]<<"\t";
+}
