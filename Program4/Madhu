@@ -9,12 +9,12 @@ A[] = {1,2,3,7,5}
 Output: 2 4
 Explanation: The sum of elements 
 from 2nd position to 4th position 
-is 12.*/
+is 12.
+ 
 
 #include<iostream>
 using namespace std;
-
-//Aproach 2 with better efficiency
+//Approach 2
 void sort(int ar[],int n,int s){
     int tot=ar[0], start=0;
 
@@ -26,7 +26,7 @@ void sort(int ar[],int n,int s){
 
         }
         if(tot==s){
-            cout<<"Found in pos"<<start+1 <<" to"<<i;
+            cout<<"Found in pos"<<start+1 <<" to "<<i<<endl;
             break;
         }
         else{
@@ -35,32 +35,28 @@ void sort(int ar[],int n,int s){
     }
     
 }
+
 int main(){
-    int arr[]={1,2,3,7,5};
-    int n=5;
-    int s;
+    int arr[]={3,2,1,7,5};
+    int n=8;
+    int s,flag;
     cout<<"Enter the sum";
     cin>>s;
-    
     sort(arr,n,s);
-   
+    //Approach 1
     for (int i = 0; i < n; i++)
     {
        int sum=0;
        for(int j=i;j<n;j++){
            sum=sum+arr[j];
            if(sum==s){
-               cout<<i+1<<" "<<j+1<<endl;
-               break;//Using only this gives pos of all the ele of sub array with the given sum.
-               int found=1;
-               
+               cout<<"Sub-array starts from pos "<<i+1<<" "<<j+1<<endl;
+               flag=1;
+               break;
            }
        }
-       if(found==1){
-       break;
+       if(flag ==1) break;
     }
-  
+   
     return 0;
 }
-
-
