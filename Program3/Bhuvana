@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int a[10],n,i,count=0,j,k=0,b[10]={0};
+    cout<<"Enter the number of elements:";
+    cin>>n;
+    cout<<"Enter the array elements:\n";
+    for(i=0;i<n;i++)
+    {
+    scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(k=0;k<n;k++)
+        {
+            if(a[i]==b[k])
+            break;
+        }
+        if(k==n)
+        {
+            for(j=i+1;j<n;j++)
+            {
+            if(a[i]==a[j])
+                count=count+1;
+            }
+        }
+        b[i]=a[i];
+    }
+    cout<<"No of duplicate elements:"<<count;
+
+    return 0;
+}
