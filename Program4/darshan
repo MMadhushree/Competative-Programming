@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class problem4 {
+	public static void main(String[] args) {
+		System.out.println("Enter the no of elements :");
+		int n,i,j,sum,num,count=0;
+		Scanner sc=new Scanner(System.in);
+		n=sc.nextInt();
+		int[] a=new int[n];
+		System.out.println("Enter the Elements:");
+		for(i=0;i<n;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("Enter the element :");
+		num=sc.nextInt();
+		for(i=0;i<n;i++)
+		{
+			sum=0;
+			for(j=i;j<n;j++)
+			{
+				sum=sum+a[j];
+				if(sum==num)
+				{
+					System.out.println((i+1)+" "+(j+1));
+					count=count+1;
+					break;
+				}
+			}
+			if(count>=1)
+			{
+				break;
+			}
+		}
+	}
+}
