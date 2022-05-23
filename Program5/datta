@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a,i,j,k;
+    string b="*";
+    cin>>a;
+    for(i=1;i<=a;i++)
+    {
+        j=i;
+        while(j>0)
+        {
+            cout<< b;
+            j--;
+        }
+        cout<<endl;
+    }
+    for(k=a-1;k>0;k--)
+    {
+        j=k;
+        while(j>0)
+        {
+            cout<< b;
+            j--;
+        }
+        cout<<endl;
+    }
+    return 0;
+}
