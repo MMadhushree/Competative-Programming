@@ -1,0 +1,28 @@
+//Given an integer N, the task is to print half-diamond-star pattern.
+package apek1;
+import java.util.Scanner;
+import java.util.*;
+public class halfdiamond {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int num,i,j;
+		System.out.println("enter the number:");
+		num= sc.nextInt();
+		for (i = 1; i <= num; i++) {
+		for (j = 0; j < i; j++) {
+			System.out.print("*");
+		}
+		System.out.println();
+		}
+		for(i=num-1;i>=0;i--) {
+		for(j=i-1;j>=0;j--)
+		{
+			System.out.print("*");
+		}
+		System.out.println();
+	}
+	}
+
+}
