@@ -29,3 +29,46 @@ int main()
     }
     return 0;
 }
+
+
+//Different way
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a,i,j,k,flag;
+    string b="*";
+    cin>>a;
+    i=1;
+    while(i!=0)
+    {
+        j=i;
+        if(flag!=1)
+        {
+            while(j>0)
+            {
+                cout<< b;
+                j--;
+            }
+            cout<<endl;
+            i++;
+        }
+        else if(flag=1)
+        {
+            while(j>0)
+            {
+                cout<< b;
+                j--;
+            }
+            cout<<endl;
+            i--;
+        }
+        if(i==a)
+            flag=1;
+    }
+   
+    return 0;
+}
