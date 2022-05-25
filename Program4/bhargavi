@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int i,k,j,n,b[10],add=0,sum;
+   cout<<"Enter the number of elements in the array:";
+   cin>>n;
+   cout<<"Enter the array numbers:"<<endl;
+   for(k=0;k<n;k++)
+   cin>>b[k];
+   cout<<"Enter the sum/target number:"<<endl;
+   cin>>sum;
+   for(i=0;i<n;i++)
+   {
+       add=b[i];
+       for(j=i+1;j<n;j++)
+       {
+           add=add+b[j];
+           if(add==sum)
+           {
+               cout<<"The sum of elements in "<<i+1<<" th to "<<j+1<<" th position is"<<sum<<endl;
+               break;
+           }
+       }
+   }
+
+    return 0;
+}
