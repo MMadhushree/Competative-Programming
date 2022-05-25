@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class playbutton {
+
+	public static void main(String[] args) {
+		int n,i;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter an integer : ");
+		n = sc.nextInt();
+		for(i = 0; i<2*n; i++)
+		{
+			if(i<n)
+			{
+				for(int j=0;j<i;j++)
+				{
+					System.out.print("*");
+				}
+				System.out.print("\n");
+			}
+			else
+			{
+				for(int j=(2*n)-i;j>0;j--)
+					{
+						System.out.print("*");
+					}
+					System.out.print("\n");
+			}
+		}	
+	}
+}
