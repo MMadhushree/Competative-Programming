@@ -1,7 +1,5 @@
 public class DuplicateElement {  
-    public static void main(String[] args) {      
-          
-        //Initialize array   
+    public static void main(String[] args) {         
         int [] a = new int [] {33,7,9,6,7,9,24,33,333};   
           
         System.out.println(" The duplicate elements in given array are: ");  
