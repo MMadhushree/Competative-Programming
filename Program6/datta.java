@@ -29,6 +29,5 @@ public class project3 {
 			}
 			System.out.println();
 		}
-		scan.close();
 	}
 }
