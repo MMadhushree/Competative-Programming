@@ -1,0 +1,36 @@
+//Given a number n, write a program to print a diamond shape with 2n rows.
+package apek1;
+import java.util.Scanner;
+import java.util.*;
+public class fulldiamond {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+				Scanner sc = new Scanner(System.in);
+				int num,i,s,j;
+				System.out.println("enter the number:");
+				num= sc.nextInt();
+				int mid= (num+1)/2;
+				for(i=1;i<=num;i++) {  //for lines
+					for(s=mid+2;s>=i;s--) {//for printing space
+						System.out.print(" ");
+					}
+					for(j=1;j<=i;j++) {//for number of stars
+						System.out.print("* ");
+					}
+					System.out.println();
+				}
+				
+				for(i=1;i<=num;i++) {  //for lines
+					for(s=1;s<=i;s++) {//for printing space
+						System.out.print(" ");
+					}
+					for(j=1;j<=num+1-i;j++) {//for number of stars
+						System.out.print("* ");
+					}
+					System.out.println();
+				}
+				
+
+	}
+}
