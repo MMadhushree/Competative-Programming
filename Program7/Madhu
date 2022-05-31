@@ -1,3 +1,5 @@
+/*Chocolate Distribution Problem*/
+
 #include <iostream>
 using namespace std;
 
