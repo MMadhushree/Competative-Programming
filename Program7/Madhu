@@ -1,1 +1,83 @@
+#include <iostream>
+using namespace std;
 
+void insertionSort(int arr[],int n){
+    int i,j,key;
+    for(i=1;i<n;i++){
+        key=arr[i];
+        j=i-1;
+        while(j>=0&&arr[j]>key){
+            arr[j+1]=arr[j];
+            j=j-1;
+        }
+        arr[j+1]=key;
+    }
+    // cout<<"Entered sort";
+}
+
+struct store{
+    int pos,value;
+}bufferArray[20];
+
+void SubArrayComputation(int arr[],int n,int m){
+    for(int k=0;k<=n;k++){
+        bufferArray[k].value=arr[k+(m-1)]-arr[k];
+        bufferArray[k].pos=k;
+    }
+}
+
+int FindMin(int n,int m){
+    int min=bufferArray[0].value;
+    int Reqpos=0;
+
+    // for(int i=1;i<=sizeof(bufferArray)/sizeof(bufferArray[0]);i++){  DOESN'T WORK
+    
+        for(int i=1;i<=n-m;i++){
+        if(bufferArray[i].value<min){
+        
+            min=bufferArray[i].value;
+            Reqpos=bufferArray[i].pos;       
+        }
+    }
+    cout<<"Minimum difference ="<<min<<endl;
+    return Reqpos;
+    
+}
+
+void PrintArray(int arr[],int index,int m){
+   
+    for(int j=index;j<index+m;j++){
+        cout<<arr[j]<<"  ";  
+    }
+}
+
+//Not Required
+void NormalPrint(int arr[],int n){
+    for(int g=0;g<n;g++){
+        cout<<arr[g]<<" ";
+    }
+    cout<<endl;
+}
+
+int main(){
+    int array[20]={3, 4, 1, 9, 56, 7, 9, 12};
+    int m=5;
+    int n=8;
+    
+    insertionSort(array,n);
+    
+                        // cout<<"Array after sorting :\n";
+                        // NormalPrint(array,n);
+    
+    SubArrayComputation(array,n,m);
+    int index=FindMin(n,m);
+
+                      /*for(int h=0;h<=n-m;h++){
+                          cout<<bufferArray[h].value<<":position="<<bufferArray[h].pos<<"     ";
+                      }
+                      cout<<endl;*----------For Understanding */
+    
+    cout<<"The selected elements with the minimum difference :"<<endl;
+    PrintArray(array,index,m);
+    return 0;
+}
