@@ -33,6 +33,7 @@ public class chocolate
           arr[i]=sc.nextInt();
       }
       sc.close();
+      System.out.prinln("The minimum difference is:");
       System.out.println(minDiff(arr, size, m));
     } 
 }
