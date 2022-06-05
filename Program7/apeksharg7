@@ -1,0 +1,61 @@
+package apek1;
+import java.util.*;
+public class Chocho {
+	static int [] a = new int[20];  
+	static int [] diff =new int[60];
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.out.println("Enter the number of packets:");
+Scanner sc = new Scanner(System.in);
+int n= sc.nextInt();
+System.out.print("Enter the number of chochlates in each packet:");
+for(int i=0;i<n;i++)
+{
+	 a[i]=sc.nextInt();
+	}
+Sort(a,n);
+System.out.println("Enter the number of students:");
+int s=sc.nextInt();
+int x,y,v,d,f;
+for(x=0,y=0;x<n+1-s;x++,y++)
+{
+	do {
+		v=x;
+		for(int e=0;e<s-1;e++)
+		{
+			v++;
+		}
+	}while(v==0);
+	diff[y]=a[v]-a[y];
+}
+System.out.println();
+int min=diff[0];
+for(int c=1;c<n+1-s;c++) {
+	if(diff[c]<=min) {
+		min=diff[c];
+	}
+}
+System.out.println("Minimum difference is:"+min);
+for(d=0;d<n;d++) {
+	if(min==diff[d]) {
+		break;
+	}
+}
+for(f=d;s!=0;s--,f++) {
+	System.out.println(a[f]);}
+}
+static void Sort(int a[],int n){
+    int i,j,key;
+    for(i=1;i<n;i++){
+        key=a[i];
+        j=i-1;
+        while(j>=0&&a[j]>key){
+            a[j+1]=a[j];
+            j=j-1;
+        }
+        a[j+1]=key;
+    }
+
+	}
+
+}
