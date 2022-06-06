@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class chocolate_amogh {
+	//final static int MAX = 100;
+	public static void main(String v[])
+	{
+		int i,j;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the no.of packets : ");
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		System.out.print("Enter the no.of chocolates in each packet : ");
+		for(i=0;i<n;i++)
+			arr[i]=sc.nextInt();
+		System.out.print("Enter the number of students : ");
+		int m = sc.nextInt();
+		sc.close();
+		Arrays.sort(arr);
+		//for(i=0;i<n;i++)
+			//System.out.print(arr[i]+" ");    // to dislpay sorted array
+		int[] index = new int[n-m+1];
+		for(i=0;i<n-m+1;i++)
+		{
+			index[i] = arr[i+m-1] - arr[i];
+		}
+		System.out.println();
+		//for(i=0;i<n-m+1;i++)
+			//System.out.print(index[i]+" ");
+		Arrays.sort(index);
+		System.out.print("\nMinimum difference is "+ index[0]);
+	}
+}
