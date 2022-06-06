@@ -1,0 +1,58 @@
+NOTE:
+  Time Complexity: O(n).It alters input array.
+  
+#include<iostream>
+#include <algorithm>
+using namespace std;
+
+void MissingnReverse(int arr[],int size)
+{   int A,B;
+    sort(arr,arr+size);
+    //Finds Missing element
+    for(int i=0;i<size;i++){
+        if(arr[i]==arr[i+1]){
+             A=arr[i];
+             break;        }       
+    }
+    //Finds Repeating element
+    for(int i=0;i<size;i++){
+    if(arr[i]+1!=arr[i+1] && arr[i]!=arr[i+1]){
+         B=arr[i]+1;
+         break;
+    }
+        }
+    cout<<"Missing ele="<<B<<"\nRepeated ele="<<A;
+}
+
+int main(){
+    int arr[]={1,7,3,4,6,5,5,2,9};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    MissingnReverse(arr,size);
+    return 0;
+}
+
+********************************************************************************************
+/* We use formulae to compute without altering the array.And Time Complexity: O(n)*/
+#include<iostream>
+using namespace std;
+
+void MissingnReverse(int arr[],int n)
+{   long long int Sum,SqSum;
+    int miss,repeat;
+    Sum=(n*(n+1))/2;
+    SqSum=(n*(n+1)*(2*n+1))/6;
+
+    for (int i = 0; i < n; i++)
+    {   Sum-=arr[i];
+        SqSum-= (long int)arr[i]*(long int)arr[i];
+    }
+    miss=(Sum+(SqSum)/Sum)/2;
+    repeat=miss-Sum;
+    cout<<"Missing number="<<miss<<"\nRepeating Number="<<repeat;  
+}
+int main(){
+    int arr[]={1,7,3,4,6,5,5,2,9};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    MissingnReverse(arr,size);
+    return 0;
+}
