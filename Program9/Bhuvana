@@ -1,0 +1,37 @@
+package exercise;
+import java.util.Scanner; 
+public class kt_largest {
+	public static void main(String[] args) {
+		int abcd[]=new int[20];
+		int n,i,j,k,v;
+		System.out.println("Enter the number of elements:");
+		Scanner ss = new Scanner(System.in);
+		n=ss.nextInt();
+		System.out.println("Enter the array elments:");
+		for(i=0;i<n;i++)
+	       abcd[i]=ss.nextInt();
+		Sort(abcd,n);
+		for(j=0;j<n;j++)
+			System.out.println(abcd[j]);
+		System.out.println("Enter the rank of the largest element:");
+		k=ss.nextInt();
+		int max=abcd[n-1];
+		for(v=0;v<n;v++) {
+			max=abcd[n-v-1];
+			if(v==k-1) break;
+		}
+		System.out.println(max);
+	}
+	static void Sort(int a[],int n){
+	    int i,j,key;
+	    for(i=1;i<n;i++){
+	        key=a[i];
+	        j=i-1;
+	        while(j>=0&&a[j]>key){
+	            a[j+1]=a[j];
+	            j=j-1;
+	        }
+	        a[j+1]=key;
+	    }
+	}
+}
