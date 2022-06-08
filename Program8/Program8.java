@@ -7,47 +7,36 @@ public class Program8 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number of elements: ");
 		int n=scan.nextInt();
-		int[] arr=new int[n];
+		int[] arr = new int [n];
+		System.out.println("Enter the array elements: ");
 		for(int i=0;i<n;i++) {
 			arr[i]=scan.nextInt();
 		}
 		Arrays.sort(arr);
-		int diff1=arr[1]-arr[0];
-		int diff2=arr[2]-arr[1];
-		int diff3 = 0;
-		if(n>3) {
-			diff3=arr[3]-arr[2];
+		int pre_ele=0,rep_ele=0;
+		for(int ele:arr) {
+			if(pre_ele==ele) {
+				System.out.print("["+ele+",");
+				rep_ele=ele;
+				break;
+			}
+			pre_ele=ele;
 		}
-		int i=arr[0];
-		if(diff1==diff2) {
-			for(int ele:arr) {
-				if(i==ele) {
-					i+=diff1;
-				}else {
-					System.out.println("["+ele+","+i+"]");
+		for(int ele:arr) {
+			if(ele==arr[0]) {
+				pre_ele=ele;
+				continue;
+			}
+			else if(rep_ele!=ele) {
+				if(pre_ele+1!=ele) {
+					System.out.println(pre_ele+1+"]");
 					break;
 				}
 			}
-		}else if(diff2==diff3) {
-			for(int ele:arr) {
-				if(i==ele) {
-					i+=diff2;
-				}else {
-					System.out.println("["+ele+","+i+"]");
-					break;
-				}
-			}
-		}else {
-			for(int ele:arr) {
-				if(i==ele) {
-					i+=diff3;
-				}else {
-					System.out.println("["+ele+","+i+"]");
-					break;
-				}
-			}
-		}	
+			pre_ele=ele;
+		}
 		scan.close();
 	}
 }
