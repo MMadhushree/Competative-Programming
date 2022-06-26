@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int method(int arr1[],int k,int n){
+    int m=1;
+    for(int e=0;e<n;e++){
+        if(k==e) continue;
+        m=arr1[e]*m;
+    }
+    return m;
+}
+int main(){
+    int n,arr[10],i,j,k,h,arr1[10];
+    cout<<"Enter the number of elements in an array:";
+    cin>>n;
+    cout<<"Enter the array elements:";
+    for(i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    for(int h=0;h<n;h++){
+        arr1[h]=arr[h];
+    }
+    cout<<"\n";
+    for(k=0;k<n;k++){
+        arr[k]=method(arr1,k,n);
+    }
+    for(h=0;h<n;h++){
+        cout<<arr[h];
+        cout<<"\t";
+    }
+}
