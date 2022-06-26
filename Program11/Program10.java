@@ -3,48 +3,40 @@ package college;
 import java.util.*;
 
 public class Program10 {
-	public static int[] arr=new int[5000];
+	public static int min=999;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the number of elelments are present");
 		int n = scan.nextInt();
+		int[] a=new int[n];
 		System.out.println("Enter the array elements: ");
 		for(int i=0;i<n;i++)
-			arr[i]=scan.nextInt();
-		MergeSort(0,n-1);
-		System.out.println(arr[1]);
+			a[i]=scan.nextInt();
+		int min=BinarySearchi(a,0,n-1);
+		System.out.println(min);
 		scan.close();
 	}
-
-	private static void MergeSort(int i, int j) {
-		int mid;
+	private static int BinarySearchi(int[] a,int i, int j) {
+		// TODO Auto-generated method stub
+		int mid,key=a[i];
+		if(min>a[i]) {
+			min=a[i];
+			//System.out.println(min);
+		}
+		if(i!=j&&a[i]>a[i+1]) {
+			return a[i+1];
+		}
 		if(i<j) {
 			mid=(i+j)/2;
-			MergeSort(i,mid);
-			MergeSort(mid+1,j);
-			Merge(i,mid,j);
+			if(key<a[mid])
+				BinarySearchi(a,mid+1,j);
+			else
+				BinarySearchi(a, i, mid);
 		}
-	}
-
-	public static void Merge(int low, int mid, int high) {
-		int[] temp=new int[5000];
-		int i=low,j=mid+1,k=0;
-		while(i<=mid&&j<=high) {
-			if(arr[i]<arr[j]) {
-				temp[k++]=arr[i++];
-			}else {
-				temp[k++]=arr[j++];
-			}
+		else {
+			return min;
 		}
-		while(i<=mid) {
-			temp[k++]=arr[i++];
-		}
-		while(j<=high) {
-			temp[k++]=arr[j++];
-		}
-		for(i=low;i<=high;i++) {
-			arr[i]=temp[i];
-		}
+		return min;
 	}
 }
