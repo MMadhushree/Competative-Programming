@@ -1,1 +1,23 @@
+import java.util.*;
+public class rotations {
+	static int[] a = new int[20];
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,j=1;
+		System.out.println("Enter the size : ");
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		System.out.println("Enter the elements :");
+		for(i=0;i<n;i++)
+		{
+			a[i] = scan.nextInt();
+		}
+		for(i=0;i<n;i++,j++)
+		{
+			if(a[i]>a[j])
+				break;
+		}
+		System.out.println("The number is : " + a[j] + "\nNumber of rotations are : " + j);
+	}
+}
 
