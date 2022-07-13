@@ -1,0 +1,43 @@
+package firstproject;
+import java.util.*;
+public class anagram {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		HashMap<Character, Integer> hash1 = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> hash2 = new HashMap<Character, Integer>();
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter two strings :");
+		String str1 = scan.next();
+		String str2 = scan.next();
+		scan.close();
+		char[] arr1 = str1.toCharArray();
+		char[] arr2 = str2.toCharArray();
+		if(arr1.length != arr2.length) {
+			System.out.println("The string is not an anagram");
+			System.exit(0);
+		}
+		else {
+			for(int i=0;i<arr1.length;i++) {
+				if(hash1.get(arr1[i])==null)
+					hash1.put(arr1[i], 1);
+				else {
+					Integer c = hash1.get(arr1[i]);
+					hash1.put(arr1[i], ++c);
+				}
+			}
+			for(int i=0;i<arr1.length;i++) {
+				if(hash2.get(arr1[i])==null)
+					hash2.put(arr1[i], 1);
+				else {
+					Integer c = hash2.get(arr1[i]);
+					hash2.put(arr1[i], ++c);
+				}
+			}
+		}
+		if(hash1.equals(hash2))
+			System.out.println("The string is an anagram");
+		else
+		System.out.println("The string is not an anagram");
+	}
+}
