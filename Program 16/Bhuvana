@@ -1,0 +1,37 @@
+package groupname;
+import java.util.Scanner;
+public class anagram {
+	public static void main(String[] args) {
+		Scanner ss=new Scanner(System.in);
+		String str1,str2;
+		int i,j,h=0;
+		System.out.println("Enter the first string:");
+		str1=ss.next();
+		System.out.println("Enter the second string:");
+		str2=ss.next();
+		char[] ch1 = new char[str1.length()];
+		char[] ch2 = new char[str2.length()];
+		for(int k=0;k<str1.length();k++) {
+			ch1[k]=str1.charAt(k);
+		}
+		for(int g=0;g<str2.length();g++) {
+			ch2[g]=str2.charAt(g);
+		}
+		if(str1.length()==str2.length()) 
+		{
+        for(i=0;i<str1.length();i++) {
+    	   for(j=0;j<str2.length();j++) {
+    		   if(ch1[i]==ch2[j])
+    			   break;
+    		   else
+    			   continue;
+    	   }
+    	   if(j==str2.length()) {
+    		   h=1;
+    		   System.out.println("False");  }
+         }
+		}
+		if(h!=1)
+			System.out.println("True");
+	}
+}
